@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'puma', '~> 3.7'
 
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '~> 5.0'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
@@ -46,28 +46,40 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-end
 
-# https://github.com/bkeepers/dotenv
-group :development, :test do
+  # https://github.com/bkeepers/dotenv
   gem 'dotenv-rails'
+
 end
 
-# Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+# general development tools
 group :development do
+
+  # https://github.com/charliesome/better_errors
+  gem 'better_errors'
+
+  # https://github.com/flyerhzm/bullet
+  gem 'bullet'
+
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
-end
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-group :development do
+  # https://github.com/MiniProfiler/rack-mini-profiler
+  # gem 'rack-mini-profiler'
+
+  # http://voormedia.github.io/rails-erd/
+  # note: need to run this command for it to work --> brew install graphviz
+  gem "rails-erd"
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '>= 3.3.0'
+
 end
 
 # linting tools
