@@ -95,17 +95,17 @@ group :test do
   # http://blowmage.com/minitest-rails/
   gem 'minitest-rails'
 
+  # https://github.com/blowmage/minitest-rails-capybara
+  # gem 'minitest-rails-capybara'
+
   # https://github.com/kern/minitest-reporters
   gem 'minitest-reporters'
 
   # https://github.com/freerange/mocha
   # gem 'mocha'
 
-  # https://github.com/blowmage/minitest-rails-capybara
-  # gem 'minitest-rails-capybara'
-
   # https://github.com/grosser/single_test
-  # Sgem "single_test"
+  gem "single_test"
 
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
