@@ -86,7 +86,6 @@ group :development do
 
 end
 
-
 # testing tools
 group :test do
 
@@ -94,7 +93,10 @@ group :test do
   gem 'minitest-fail-fast'
 
   # http://blowmage.com/minitest-rails/
-  gem "minitest-rails"
+  gem 'minitest-rails'
+
+  # https://github.com/blowmage/minitest-rails-capybara
+  # gem 'minitest-rails-capybara'
 
   # https://github.com/kern/minitest-reporters
   gem 'minitest-reporters'
