@@ -62,8 +62,13 @@ group :development do
   gem 'better_errors'
 
   # https://github.com/flyerhzm/bullet
+  # helps to kill N+1 queries and unused eager loading.
   gem 'bullet'
 
+  # https://github.com/ryanb/letter_opener
+  gem 'letter_opener'
+
+  # https://github.com/guard/listen
   gem 'listen', '>= 3.0.5', '< 3.2'
 
   # https://github.com/MiniProfiler/rack-mini-profiler
@@ -71,6 +76,7 @@ group :development do
 
   # http://voormedia.github.io/rails-erd/
   # note: need to run this command for it to work --> brew install graphviz
+  # generates entity relationship diagrams
   gem "rails-erd"
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
