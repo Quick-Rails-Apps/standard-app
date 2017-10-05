@@ -79,12 +79,14 @@ group :development do
   # generates entity relationship diagrams
   gem "rails-erd"
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background. 
+  # https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '>= 3.3.0'
+  # https://github.com/rails/web-console
+  gem 'web-console'
 
 end
 
@@ -92,22 +94,22 @@ end
 group :development do
 
   # https://github.com/presidentbeef/brakeman
-  gem 'brakeman', require: false
+  gem 'brakeman'
 
   # https://github.com/zmbush/coffeelint-ruby
-  gem 'coffeelint', require: false
+  gem 'coffeelint'
 
   # https://github.com/brigade/haml-lint
-  gem 'haml_lint', require: false
+  gem 'haml_lint'
 
   # https://github.com/troessner/reek
-  gem 'reek', require: false
+  gem 'reek'
 
   # https://github.com/bbatsov/rubocop
-  gem 'rubocop', require: false
+  gem 'rubocop'
 
   # https://github.com/brigade/scss-lint
-  gem 'scss_lint', require: false
+  gem 'scss_lint'
 
 end
 
