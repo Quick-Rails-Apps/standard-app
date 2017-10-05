@@ -10,14 +10,13 @@ As a starter app for Ruby on Rails, this app requires Ruby and Rails be installe
 Assuming you have a basic environment setup to develop Ruby on Rails apps using a PostgreSQL database, then these are the recommended steps to update your environment to support the creation of this app.
 
 ```
-# install bundler
-gem install bundler
-
 # install Ruby
-brew install ruby
 rvm install 1.9.3
 rvm use 2.4.2
 ruby -v
+
+# install git-flow
+
 
 ```
 
@@ -25,21 +24,25 @@ ruby -v
 A step by step series of examples that tell you have to get a development env running
 
 ```
+# create the project
 cd [my_projects_url]
-rails new [my_app_name] --database=postgresql
+git clone git@github.com:Quick-Rails-Apps/standard-app.git
+rails new standard-app --database=postgresql
 cd [my_app_name]
 
-
-# copy it down...
-# git clone git@github.com:Quick-Rails-Apps/standard-app.git
-
+# initialize git-flow
 git-flow init
-seeding...
 
+# setup the databse
+create
+initialize
+seed
+
+# start app
 rails s
 
-End with an example of getting some data out of the system or using it for a little demo
-
+# in another terminal window
+rake jobs:work
 ```
 
 ## Configuration
@@ -47,6 +50,17 @@ More to come...
 
 ```
 XXXX
+```
+
+## Testing
+Explain how to run the automated tests for this system
+
+```
+rake test
+rake test:controllers
+rake test:integration
+rake test:models
+rake test TESTOPTS="--fail-fast"
 ```
 
 ## Code Quality
@@ -65,17 +79,6 @@ rake lint:ruby
 rake lint:reek
 rake lint:brakeman
 
-```
-
-## Testing
-Explain how to run the automated tests for this system
-
-```
-rake test
-rake test:controllers
-rake test:integration
-rake test:models
-rake test TESTOPTS="--fail-fast"
 ```
 
 ## Deployment
@@ -174,6 +177,9 @@ Please read [CONTRIBUTING.md] for details on our code of conduct, and the proces
 
 ## Authors & Contributors
 * **Brett Adler** - *Initial work*
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 
 ## Acknowledgments
 * This file is based off this template - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
