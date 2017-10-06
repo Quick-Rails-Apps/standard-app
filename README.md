@@ -1,140 +1,195 @@
-# The Quick App For Ruby on Rails
-
-We're working on a building a quick start app for Ruby on Rails projects. It may eventually branch in to others, but for now we're just building the basics.
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# Git-Flow Branches
-We use the standards set below by the defaults for git-flow
-
-Branch name for production releases: [master]
-Branch name for "next release" development: [develop]
-
-How to name your supporting branch prefixes?
-Feature branches? [feature/]
-Release branches? [release/]
-Hotfix branches? [hotfix/]
-Support branches? [support/]
-Version tag prefix? []
-
-
-
-# Ruby on Rails Starter Apps
-The purpose of this project is to build a simple set of Ruby on Rails starter apps that everyone in the Rails community can use to build apps faster and better.
+# Ruby on Rails Starter App
+The purpose of this project is to build a simple set of Ruby on Rails starter apps that everyone in the Rails community can use to build apps faster and better. We're starting with the standard app first.
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions should help you create and setup a standard rails app project. This guide assumes you are familiar with building Ruby on Rails projects using GitHub. To learn the basics for creating a Ruby on Rails project, read here - http://guides.rubyonrails.org/getting_started.html
 
-### Prerequisites
-What things you need to install the software and how to install them
+## Prerequisites
+As a starter app for Ruby on Rails, this app requires Ruby and Rails be installed. If you're brand new to Rails, you should stop here and learn how to setup a Ruby on Rails development enviornment first. This guide will help - http://railsapps.github.io/installrubyonrails-mac.html
 
-```
-system dependencies
-local dev dependencies
-Ruby ???
-Rails ???
-Bundler ???
-
+Assuming you have a basic environment setup to develop Ruby on Rails apps using a PostgreSQL database, then these are the recommended steps to update your environment to support the creation of this app.
 
 ```
+# install Ruby
+rvm install 1.9.3
+rvm use 2.4.2
+ruby -v
 
-### Installation
+# install git-flow
+
+
+```
+
+## Installation
 A step by step series of examples that tell you have to get a development env running
 
 ```
-Give the example
+# create the project
+cd [my_projects_url]
+git clone git@github.com:Quick-Rails-Apps/standard-app.git
+rails new standard-app --database=postgresql
+cd [my_app_name]
+
+# initialize git-flow
+git-flow init
+
+# setup the databse
+create
+initialize
+seed
+
+# start app
+rails s
+
+# in another terminal window
+rake jobs:work
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-### Database Setup
-Set database as pg
-Create database
-Initilize database
-Seed database
 
 ## Configuration
 More to come...
 
+```
+XXXX
+```
+
 ## Testing
 Explain how to run the automated tests for this system
 
-### Break down into end to end tests
-Explain what these tests test and why
-
 ```
-Give an example
-```
-
-### And coding style tests
-Explain what these tests test and why
-
-```
-Give an example
+rake test
+rake test:controllers
+rake test:integration
+rake test:models
+rake test TESTOPTS="--fail-fast"
 ```
 
-## Services
-* job queues
-* cache servers
-* search engines
-* analytics
-* backups
-* daily summaries
-* etc.
+## Code Quality
+Explain linting....
+
+```
+rake lint
+
+rake lint:front
+rake lint:coffee
+rake lint:haml
+rake lint:scss
+
+rake lint:back
+rake lint:ruby
+rake lint:reek
+rake lint:brakeman
+
+```
 
 ## Deployment
 Add additional notes about how to deploy this on a live system
 
-## Built With
-* Ruby
-* Rails
+```
+scripts/deploy
+```
 
-## Contributing
-Please read [CONTRIBUTING.md] for details on our code of conduct, and the process for submitting pull requests to us.
+## Heroku Setup
+
+Highly recommend these:
+
+```
+heroku addons:create heroku-postgresql:hobby-dev
+heroku addons:create scheduler:standard
+heroku addons:create scout:chair
+heroku addons:create newrelic:wayne
+heroku addons:create papertrail:choklad
+heroku addons:create sentry:f1
+heroku addons:create sendgrid:starter
+```
+
+And these should be used as needed/wanted.
+
+```
+heroku addons:create tinfoilsecurity:limited
+heroku addons:create quotaguard:starter
+heroku addons:create informant:free
+
+```
+
+## Branching
+We use the standards branching conventions set below by the defaults for standard git-flow:
+Command Line Cheatsheet: https://danielkummer.github.io/git-flow-cheatsheet/
+Git Flow Philosophy: http://nvie.com/posts/a-successful-git-branching-model/
+
+* master - production branch
+* develop - next release branch
+* [feature/] - Feature branches
+* [release/] - Release branches
+* [hotfix/] - Hotfix branches
+* [support/] - Support branches
+
+To setup git-flow on your branch:
+
+```
+brew install git-flow
+cd myapp
+git flow ????????
+git-flow init
+
+``````
+
+To create feature branches:
+
+```
+git flow feature start
+git flow feature publish
+git flow feature finish
+
+```
+
+To release:
+
+```
+git flow release start
+git flow release publish
+git flow release finish
+```
 
 ## Versioning
-We use [BitBucket]for versioning. For the versions available, see the [tags on this repository](https://bitbucket.com/your/project/tags).
+We use GitHub for versioning. For the versions available, see the [tags on this repository](https://bitbucket.com/your/project/tags).
 
-## Authors
-* **Brett Adler** - *Initial work*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+## Built With
+Ruby on Rails - if you don't love it, you probably haven't build an app with it.
+jQuery - who doesn't
+PostgreSQL - 
+Heroku - 
+
+## Plugins
+
+Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+
+| Plugin | Link |
+| ------ | ------ |
+| Dropbox | [plugins/dropbox/README.md] [PlDb] |
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-This README.md file was based off the template from here - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+## Contributing
+Please read [CONTRIBUTING.md] for details on our code of conduct, and the process for submitting pull requests to us.
 
+## Authors & Contributors
+* **Brett Adler** - *Initial work*
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+
+## Acknowledgments
+* This file is based off this template - https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+* This file was written with help from https://dillinger.io/
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
+## ???????
+
+```
+XXXX
+```
